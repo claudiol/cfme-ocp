@@ -20,8 +20,8 @@ dialog_options = $evm.root["service_template_provision_task"].dialog_options
 project_name = dialog_options['dialog_option_0_service_name']
 
 user_role = dialog_options['dialog_option_0_user_role']
-user = $evm.root['user']
-user_name = user.get_ldap_attribute("uid")
+#user = $evm.root['user']
+#user_name = user.get_ldap_attribute("uid")
 
 $evm.log("info", "========= BEGIN CHECKING IF PROJECT #{project_name} EXISTS =========")
 token = $evm.object['token']

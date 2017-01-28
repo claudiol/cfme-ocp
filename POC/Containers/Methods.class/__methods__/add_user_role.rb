@@ -23,15 +23,16 @@ $evm.log("info"," Detected requester is #{user}")
 group = user.current_group
 
 #Pull the user name out of the LDAP by attribute, else use the username in the CFME DB
-ldap_username_attr = group.tags("ldap_username_attribute")[0]
+#ldap_username_attr = group.tags("ldap_username_attribute")[0]
 
-unless ldap_username_attr.nil?
-	user_name = user.get_ldap_attribute(ldap_username_attr)
-else
-  user_name = user.name
-  $evm.log("info","Unable to get username by attribute.  Procceding with user_name as #{user_name}")
-end
+#unless ldap_username_attr.nil?
+#	user_name = user.get_ldap_attribute(ldap_username_attr)
+#else
+#  user_name = user.name
+#  $evm.log("info","Unable to get username by attribute.  Procceding with user_name as #{user_name}")
+#end
 
+user_name = user.userid
 token = $evm.object['token']
 cluster_url = $evm.object['cluster_url']
 cluster_api_port = $evm.object['cluster_api_port']

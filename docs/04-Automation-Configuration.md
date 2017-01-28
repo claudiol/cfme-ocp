@@ -13,7 +13,7 @@ Name this the *project-request-dialog*.  Give it a *Submit* and *Cancel* button.
 
 | Label | Name | Description | Type | Required |  Validator Rule |
 | ----- | ---- | ----------- | ---- | -------- | -------------- |
-| Project Name | option_0_service_name | Project name may only container lowercase letters and numbers | Text Box | Yes | ^[a-z0-9]*$ |
+| Project Name | option_0_service_name | Project name may only container lowercase letters and numbers | Text Box | Yes | ^([a-z0-9]+-)*[a-z0-9]+$ |
 | Project Display Name | option_0_display_name  | | Text Box | No | |
 | Project Description | option_0_project_description | | Text Area Box | No |  |
 

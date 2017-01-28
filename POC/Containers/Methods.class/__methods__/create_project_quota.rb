@@ -46,7 +46,8 @@ client = Kubeclient::Client.new cluster_master, "v1", ssl_options: ssl_options
 client.discover
 resource_quota = Kubeclient::ResourceQuota.new
 resource_quota.metadata = {}
-resource_quota.metadata.name = group.description.gsub!(/[^0-9A-Za-z]/, '') + "quota"
+#resource_quota.metadata.name = group.description.gsub!(/[^0-9A-Za-z]/, '') + "quota"
+resource_quota.metadata.name = "ocpquota"
 resource_quota.metadata.namespace = project_name
 resource_quota.spec = {}
 resource_quota.spec.hard = {}
