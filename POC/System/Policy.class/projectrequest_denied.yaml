@@ -4,9 +4,9 @@ version: 1.0
 object:
   attributes:
     display_name: 
-    name: ProjectRequest_Pending_Approver
+    name: ProjectRequest_denied
     inherits: 
     description: 
   fields:
-  - method1:
-      value: ProjectRequest_Pending_Approver
+  - rel5:
+      value: "/Service/Provisioning/Email/ProjectRequest_Denied"

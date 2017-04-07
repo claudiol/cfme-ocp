@@ -6,7 +6,8 @@ object:
     name: POC
     description: Proof of Concept
     display_name: 
-    system: false
-    priority: 2
+    priority: 1
     enabled: true
-    tenant_id: 10000000000002
+    tenant_id: 1
+    source: user
+    top_level_namespace: 

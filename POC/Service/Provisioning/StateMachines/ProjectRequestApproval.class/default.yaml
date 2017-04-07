@@ -10,6 +10,8 @@ object:
   fields:
   - approval_type:
       value: noauto
+  - InspectRequest:
+      value: "/POC/Service/Provisioning/StateMachines/Request/InspectMe"
   - ValidateRequest:
-      value: "/POC/Containers/Methods/${/#validation_method}Validation"
+      value: "/POC/Containers/Methods/${/#request_type}Validation"
       on_error: auto_fail_request

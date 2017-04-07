@@ -1,7 +1,5 @@
-#Authorization: Bearer
-# Description: This method launches the service provisioning job
-require 'rest-client'
-require 'json'
+# Description: This method adds a user to the project in the role of admin
+
 require 'kubeclient'
 
 user_name = ""
@@ -21,16 +19,7 @@ $evm.log("info"," Detected requester is #{user}")
 
 #Get the user's current group
 group = user.current_group
-
-#Pull the user name out of the LDAP by attribute, else use the username in the CFME DB
-#ldap_username_attr = group.tags("ldap_username_attribute")[0]
-
-#unless ldap_username_attr.nil?
-#	user_name = user.get_ldap_attribute(ldap_username_attr)
-#else
-#  user_name = user.name
-#  $evm.log("info","Unable to get username by attribute.  Procceding with user_name as #{user_name}")
-#end
+user_role = group.tags("ocp_project_role")[0]
 
 user_name = user.userid
 token = $evm.object['token']
@@ -41,19 +30,9 @@ no_verify_ssl = $evm.object['no_verify_ssl']
 debug = $evm.object['debug']
 pretty = $evm.object['pretty']
 
-client_cert_location = $evm.object['client_cert_location']
-client_key_location = $evm.object['client_key_location']
-client_ca_cert_location = $evm.object['client_ca_cert_location']
-
-cluster_master = cluster_url + ":" + cluster_api_port.to_s + "/oapi"
-
-ssl_options = {
-  client_cert: OpenSSL::X509::Certificate.new(File.read(client_cert_location)),
-  client_key:  OpenSSL::PKey::RSA.new(File.read(client_key_location)),
-  ca_file:     client_ca_cert_location,
-  verify_ssl: OpenSSL::SSL::VERIFY_NONE }
-
-client = Kubeclient::Client.new cluster_master, "v1", ssl_options: ssl_options
+ems = $evm.vmdb(:ext_management_system).find_by_name(dialog_options['dialog_option_0_target_cluster'])
+client = ems.connect
+client.discover
 
 $evm.log("info","--- The user role being added is: #{user_role} ---")
 client.patch_role_binding user_role, {:userNames => [user_name]}, project_name

@@ -3,7 +3,7 @@ object_type: method
 version: 1.0
 object:
   attributes:
-    name: ServiceTemplateProvisionRequest_Denied
+    name: ProjectRequest_Denied
     display_name: 
     description: 
     scope: instance

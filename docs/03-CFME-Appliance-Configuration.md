@@ -55,9 +55,8 @@ When creating tags, we must first create some categories.
 | quota_ocp_rc | Quota OCP Replication Controller Count | Quota OCP Replication Controller Count | On | On | Off |
 | quota_ocp_secrets | Quota OCP Secrets | Quota OCP Secrets | On | On | Off |
 | quota_ocp_services | Quota OCP Services | Quota OCP Services | On | On | Off |
-| ldap_manager_attribute | LDAP Manager Attribute | LDAP Manager Attribute | On | On | Off |
-| ldap_username_attribute | LDAP User Name Attribute | LDAP User Name Attribute | On | On | Off |
 | ocp_project_role | Default Requester Project Role | Default Requester Project Role | On | On | Off |
+| ocp_cluster_type | OCP Cluster Type | OCP Cluster Type | On | On | Off |
 
 Now we can add values to the tags.  For each of the categories above, create the following **recommended** values.
 
@@ -121,8 +120,18 @@ Now we can add values to the tags.  For each of the categories above, create the
 | edit | Editor |
 | view | Viewer |
 
+### OCP Cluster Type
+
+| Name | Description |
+| ---- | ----------- |
+| dev | Development |
+| test | Test |
+| prod | Production |
+
 ## Applying the tags
-Each of the above tags get applied to a group.  Groups are configured under **Access Control**.
+Each of the above tags get applied to a group (except the OCP Cluster Type).  Groups are configured under **Access Control**.
 * Settings --> Configuration --> Access Control
 
 Under **Groups** select the group to which to apply the tags.  Then go to **Policy** at the top and select the *Edit <Company> Tags for this Group*.
+
+The **OCP Cluster Type** gets applied to a particular Container Manager Provider: OpenShift.

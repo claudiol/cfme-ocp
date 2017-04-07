@@ -21,7 +21,11 @@ def dump_ar_object(key, object)
   $evm.log("info", "key:<#{key}>  object:<#{object}>")
   dump_attributes(object)
   dump_associations(object)
-  dump_tags(object)
+  begin
+  	dump_tags(object)
+  rescue Exception => e
+    $evm.log("info","Object doesn't appear to have tags or is not taggable.")
+  end
 end
 
 def dump_attributes(object)

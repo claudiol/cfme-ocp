@@ -4,9 +4,9 @@ version: 1.0
 object:
   attributes:
     display_name: 
-    name: ProjectRequest_Pending_User
+    name: InspectMe
     inherits: 
     description: 
   fields:
-  - method1:
-      value: ProjectRequest_Pending_User
+  - meth1:
+      value: InspectMe

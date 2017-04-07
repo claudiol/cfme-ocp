@@ -3,7 +3,7 @@ object_type: method
 version: 1.0
 object:
   attributes:
-    name: ServiceTemplateProvisionRequest_Pending
+    name: get_development_clusters
     display_name: 
     description: 
     scope: instance

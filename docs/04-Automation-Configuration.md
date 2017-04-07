@@ -16,6 +16,9 @@ Name this the *project-request-dialog*.  Give it a *Submit* and *Cancel* button.
 | Project Name | option_0_service_name | Project name may only container lowercase letters and numbers | Text Box | Yes | ^([a-z0-9]+-)*[a-z0-9]+$ |
 | Project Display Name | option_0_display_name  | | Text Box | No | |
 | Project Description | option_0_project_description | | Text Area Box | No |  |
+| Target Cluster | option_0_target_cluster | | Dynamic Dropdown | Yes | |
+
+**NOTE:** The *Target Cluster* points to /Containers/Methods/GetDevelopmentClusters
 
 Save
 

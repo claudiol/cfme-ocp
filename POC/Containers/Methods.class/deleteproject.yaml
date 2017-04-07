@@ -13,10 +13,10 @@ object:
   - no_verify_ssl:
       value: 'true'
   - client_cert_location:
-      value: "/root/clustera/admin.crt"
+      value: "/home/cloud-user/.cfme/clustera/admin.crt"
   - client_key_location:
-      value: "/root/clustera/admin.key"
+      value: "/home/cloud-user/.cfme/clustera/admin.key"
   - client_ca_cert_location:
-      value: "/root/clustera/admin-ca.crt"
+      value: "/home/cloud-user/.cfme/clustera/admin-ca.crt"
   - meth1:
       value: delete_project
