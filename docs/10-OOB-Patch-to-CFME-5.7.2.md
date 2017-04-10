@@ -1,0 +1,43 @@
+# OOB Patch to CFME 5.7.2
+
+The following needs to be executed on each appliance.
+
+1. SSH to your CFME
+2. Copy the following files to **/var/www/miq/vmdb/lib/miq_automation_engine/service_models/**
+
+lib/miq_automation_engine/service_models/miq_ae_service_container_volume_kubernetes.rb
+lib/miq_automation_engine/service_models/miq_ae_service_manageiq-providers-kubernetes-container_manager-container.rb
+lib/miq_automation_engine/service_models/miq_ae_service_manageiq-providers-kubernetes-container_manager-container_group.rb
+lib/miq_automation_engine/service_models/miq_ae_service_manageiq-providers-kubernetes-container_manager-container_node.rb
+lib/miq_automation_engine/service_models/miq_ae_service_persistent_volume.rb
+lib/miq_automation_engine/service_models/miq_ae_service_persistent_volume_claim.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_build_pod_spec.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_build_spec.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_condition_spec.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_definition_spec.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_env_var_spec.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_group_spec.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_image_registry_spec.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_image_spec.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_limit_item_spec.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_limit_spec.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_node_spec.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_port_config_spec.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_project_spec.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_quota_spec.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_replicator_spec.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_route_spec.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_service_spec.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_spec.rb
+spec/lib/miq_automation_engine/service_methods/miq_ae_service_container_volume_spec.rb
+
+3. Add the following line to **/var/www/miq/vmdb/lib/miq_automation_engine/service_models/miq_ae_service_manageiq-providers-container_manager.rb**
+
+```
+module MiqAeMethodService
+  class MiqAeServiceManageIQ_Providers_ContainerManager < MiqAeServiceManageIQ_Providers_BaseManager
+    expose :api_endpoint
+    expose :connect
+  end
+end
+```
