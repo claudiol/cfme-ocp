@@ -7,4 +7,14 @@ object:
     name: ProjectPromotionInitialization
     inherits: 
     description: 
-  fields: []
+  fields:
+  - pre5:
+      value: "/POC/Containers/Methods/NameService"
+  - provision:
+      value: "/POC/Containers/StateMachines/PromoteProject"
+  - checkprovisioned:
+      value: "/POC/Containers/Methods/CheckProjectExists"
+  - post1:
+      value: "/POC/Containers/Methods/AddUserAsViewer"
+  - post2:
+      value: "/POC/Containers/Methods/AddNewProjectTag"

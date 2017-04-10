@@ -1,0 +1,25 @@
+---
+object_type: instance
+version: 1.0
+object:
+  attributes:
+    display_name: 
+    name: PromoteProject
+    inherits: 
+    description: 
+  fields:
+  - state1:
+      value: "/Containers/Methods/CreateProject"
+      on_error: fail_promoting_object
+  - state2:
+      value: "/Containers/Methods/PromoteImageStreams"
+      on_entry: set_promotion_image_streams
+      on_error: fail_promoting_object
+  - state3:
+      value: "/Containers/Methods/PromoteServices"
+      on_entry: set_promotion_services
+      on_error: fail_promoting_object
+  - state4:
+      value: "/Containers/Methods/PromoteDeploymentConfigs"
+      on_entry: set_promotion_deployment_configs
+      on_error: fail_promoting_object

@@ -13,5 +13,5 @@ object:
   - InspectRequest:
       value: "/POC/Service/Provisioning/StateMachines/Request/InspectMe"
   - ValidateRequest:
-      value: "/POC/Containers/Methods/${/#request_type}Validation"
+      value: "/POC/Containers/Methods/ProjectRequestValidation"
       on_error: auto_fail_request

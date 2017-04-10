@@ -7,3 +7,9 @@ oadm policy add-cluster-role-to-user cluster-admin system:serviceaccount:managem
 ```
 3. Deploy CloudForms 5.7.2 (or ManageIQ).  I recommend one appliance configured for database management and two for doing the actual work.  The following sections provide a recommended configuration.
 4. The [Kubeclient Ruby Gem](https://github.com/abonas/kubeclient.git) is required on each worker appliance.  Version 2.3.0 is the minimum version and should be the default in 5.7.2 or euwe of ManageIQ.
+
+# Prerequisites for Project Promotion
+1. All of the above
+2. Expose the OCP registry in the Clusters that will be the source of promotions
+3. Secure the OCP registry that will be the source of promotions
+4. Copy the certificate for the registry to /etc/docker/certs.d/{source registry} to all the hosts in the promotion destination cluster(s).

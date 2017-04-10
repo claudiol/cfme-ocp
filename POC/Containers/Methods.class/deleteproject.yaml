@@ -8,15 +8,5 @@ object:
     inherits: 
     description: 
   fields:
-  - cluster_url:
-      value: https://openshift.clustera.ocp.kenscloud.io
-  - no_verify_ssl:
-      value: 'true'
-  - client_cert_location:
-      value: "/home/cloud-user/.cfme/clustera/admin.crt"
-  - client_key_location:
-      value: "/home/cloud-user/.cfme/clustera/admin.key"
-  - client_ca_cert_location:
-      value: "/home/cloud-user/.cfme/clustera/admin-ca.crt"
   - meth1:
       value: delete_project

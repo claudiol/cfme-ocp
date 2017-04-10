@@ -1,0 +1,19 @@
+---
+object_type: instance
+version: 1.0
+object:
+  attributes:
+    display_name: 
+    name: SetPromotionObjects
+    inherits: 
+    description: 
+  fields:
+  - state2:
+      on_entry: set_promotion_deployment_configs
+      on_error: fail_create_promotion_objects
+  - state3:
+      on_entry: set_promotion_image_streams
+      on_error: fail_create_promotion_objects
+  - state5:
+      on_entry: set_promotion_services
+      on_error: fail_create_promotion_objects

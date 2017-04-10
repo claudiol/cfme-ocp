@@ -13,150 +13,10 @@ object:
   schema:
   - field:
       aetype: attribute
-      name: token
-      display_name: 
-      datatype: string
-      priority: 1
-      owner: 
-      default_value: 
-      substitute: true
-      message: create
-      visibility: 
-      collect: 
-      scope: 
-      description: 
-      condition: 
-      on_entry: 
-      on_exit: 
-      on_error: 
-      max_retries: 
-      max_time: 
-  - field:
-      aetype: attribute
-      name: cluster_url
-      display_name: 
-      datatype: string
-      priority: 2
-      owner: 
-      default_value: https://openshift.example.com
-      substitute: true
-      message: create
-      visibility: 
-      collect: 
-      scope: 
-      description: 
-      condition: 
-      on_entry: 
-      on_exit: 
-      on_error: 
-      max_retries: 
-      max_time: 
-  - field:
-      aetype: attribute
-      name: cluster_api_port
-      display_name: 
-      datatype: integer
-      priority: 3
-      owner: 
-      default_value: '8443'
-      substitute: true
-      message: create
-      visibility: 
-      collect: 
-      scope: 
-      description: 
-      condition: 
-      on_entry: 
-      on_exit: 
-      on_error: 
-      max_retries: 
-      max_time: 
-  - field:
-      aetype: attribute
-      name: no_verify_ssl
-      display_name: 
-      datatype: boolean
-      priority: 4
-      owner: 
-      default_value: 'false'
-      substitute: true
-      message: create
-      visibility: 
-      collect: 
-      scope: 
-      description: 
-      condition: 
-      on_entry: 
-      on_exit: 
-      on_error: 
-      max_retries: 
-      max_time: 
-  - field:
-      aetype: attribute
-      name: client_cert_location
-      display_name: 
-      datatype: string
-      priority: 5
-      owner: 
-      default_value: 
-      substitute: true
-      message: create
-      visibility: 
-      collect: 
-      scope: 
-      description: 
-      condition: 
-      on_entry: 
-      on_exit: 
-      on_error: 
-      max_retries: 
-      max_time: 
-  - field:
-      aetype: attribute
-      name: client_key_location
-      display_name: 
-      datatype: string
-      priority: 6
-      owner: 
-      default_value: 
-      substitute: true
-      message: create
-      visibility: 
-      collect: 
-      scope: 
-      description: 
-      condition: 
-      on_entry: 
-      on_exit: 
-      on_error: 
-      max_retries: 
-      max_time: 
-  - field:
-      aetype: attribute
-      name: client_ca_cert_location
-      display_name: 
-      datatype: string
-      priority: 7
-      owner: 
-      default_value: 
-      substitute: true
-      message: create
-      visibility: 
-      collect: 
-      scope: 
-      description: 
-      condition: 
-      on_entry: 
-      on_exit: 
-      on_error: 
-      max_retries: 
-      max_time: 
-  - field:
-      aetype: attribute
       name: debug
       display_name: 
       datatype: boolean
-      priority: 8
+      priority: 1
       owner: 
       default_value: 'false'
       substitute: true
@@ -176,7 +36,7 @@ object:
       name: pretty
       display_name: 
       datatype: boolean
-      priority: 9
+      priority: 2
       owner: 
       default_value: 'false'
       substitute: true
@@ -196,7 +56,7 @@ object:
       name: meth1
       display_name: 
       datatype: string
-      priority: 10
+      priority: 3
       owner: 
       default_value: 
       substitute: true

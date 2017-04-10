@@ -22,13 +22,6 @@ group = user.current_group
 user_role = group.tags("ocp_project_role")[0]
 
 user_name = user.userid
-token = $evm.object['token']
-cluster_url = $evm.object['cluster_url']
-cluster_api_port = $evm.object['cluster_api_port']
-no_verify_ssl = $evm.object['no_verify_ssl']
-
-debug = $evm.object['debug']
-pretty = $evm.object['pretty']
 
 ems = $evm.vmdb(:ext_management_system).find_by_name(dialog_options['dialog_option_0_target_cluster'])
 client = ems.connect
