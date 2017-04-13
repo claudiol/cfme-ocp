@@ -8,8 +8,6 @@ cluster_name = ""
 
 dialog_options = $evm.root["service_template_provision_task"].dialog_options
 
-promotion_patch = $evm.root['promotion_patch']
-
 unless dialog_options['dialog_option_0_service_name'].nil?
 	project_name = dialog_options['dialog_option_0_service_name']
     project_display_name = dialog_options['dialog_option_0_display_name']
@@ -25,7 +23,7 @@ cluster_name = dialog_options['dialog_option_0_target_cluster']
 
 $evm.log("info", "========= CREATING PROJECT #{project_name} IN CLUSTER #{cluster_name} =========")
 
-unless promotion_patch.nil? or promotion_patch
+begin
     ems = $evm.vmdb(:ext_management_system).find_by_name(cluster_name)
     client = ems.connect
     client.discover
@@ -37,8 +35,12 @@ unless promotion_patch.nil? or promotion_patch
     project.description = project_description 
 
     response = client.create_project_request project
-else
+rescue KubeException => e
+  if e.message.include?("already exists")
 	$evm.log("info", "Project #{project_name} exists in target cluster #{cluster_name}.")
+  else
+  	raise e
+  end
 end
 $evm.log("info", "======= END CREATING PROJECT #{project_name} IN CLUSTER #{cluster_name} =======")
 

@@ -4,9 +4,9 @@ version: 1.0
 object:
   attributes:
     display_name: 
-    name: GetTestClusters
+    name: CreateImageStreamFromDc
     inherits: 
     description: 
   fields:
   - meth1:
-      value: get_test_clusters
+      value: create_image_stream_from_dc

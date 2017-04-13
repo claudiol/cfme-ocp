@@ -8,12 +8,12 @@ object:
     inherits: 
     description: 
   fields:
-  - state2:
+  - state1:
       on_entry: set_promotion_deployment_configs
       on_error: fail_create_promotion_objects
-  - state3:
-      on_entry: set_promotion_image_streams
+  - state2:
+      on_entry: set_promotion_pvcs
       on_error: fail_create_promotion_objects
-  - state5:
+  - state3:
       on_entry: set_promotion_services
       on_error: fail_create_promotion_objects

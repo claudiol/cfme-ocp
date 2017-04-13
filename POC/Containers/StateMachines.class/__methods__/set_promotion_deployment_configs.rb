@@ -2,7 +2,39 @@
 # Description: Set Promotion Objects
 #
 require 'kubeclient'
-require 'json'
+
+$evm.log("info","=== BEGIN SET PROMOTION DEPLOYMENT CONFIGS ===")
+
+def remove_image_change_trigger(triggers)
+  triggers.each { |trigger|
+    if trigger[:type] == "ImageChange"
+      triggers.delete(trigger)
+    end
+    }
+  triggers
+end
+
+#def get_route_name(project)
+#  ems_id = project.ext_management_system.id
+#  routes = $evm.vmdb(:container_route).where(:name => 'docker-registry', :ems_id => ems_id)
+#  route_name = routes[0].host_name
+#  route_name
+#end
+
+
+def update_container_image_repo(containers)
+	containers.each { |container|  
+      if match = container[:image].match(/172\.30\.\d{1,3}\.\d{1,3}:5000\/\S*\/(\S*)@/i)
+        image_name = match.captures
+        $evm.root['isdc-'+image_name[0]] = image_name[0]
+      end
+      container[:image].gsub!(/172\.30\.\d{1,3}\.\d{1,3}:5000\/\S*\//, '')
+      $evm.log("info","===> Container image repo is now #{container[:image]}")
+
+      }
+  containers
+  
+end
 
 def parse_deployment_configs(client, project_name,selected_configs)
   deployment_configs = client.get_deployment_configs(namespace: project_name)
@@ -26,16 +58,24 @@ def parse_deployment_configs(client, project_name,selected_configs)
         dc_hash[:metadata].delete(:resourceVersion)
         dc_hash[:metadata].delete(:creationTimestamp)
         dc_hash[:metadata].delete(:generation)
+        
+        dc_hash[:spec][:triggers] = remove_image_change_trigger(dc_hash[:spec][:triggers])
+        dc_hash[:spec][:template][:spec][:containers] = update_container_image_repo(dc_hash[:spec][:template][:spec][:containers])
+      	$evm.root['dcreplica-'+dc_name] = dc_hash[:spec][:replicas]
+        #Initially we will set this to zero and scale up at the end of the promotion statemachine
+        #dc_hash[:spec][:replicas] = '0'    
+      
         dc_hash.delete(:status)
-        $evm.log("info", "===> Cleaned up hash #{dc_hash}")
-        $evm.root["dc-"+dc_name] = dc_hash
+        
+        containers = dc_hash[:spec][:template][:spec][:containers]
+		$evm.root["dc-"+dc_name] = dc_hash
       end
 
       }
     }
 end
 
-$evm.log("info","=== BEGIN SET PROMOTION DEPLOYMENT CONFIGS ===")
+
 project_id = 0
 dc_selected_configs = []
 unless $evm.root["service_template_provision_task"].nil?
@@ -52,6 +92,7 @@ $evm.log("info","===> The project ID is #{project_id}")
 $evm.log("info","===> The selected deployment configs are #{dc_selected_configs.inspect}")
 project = $evm.vmdb('container_project').find_by_id(project_id)
 project_name = project.name
+#route_name = get_route_name(project)
 
 client = project.ext_management_system.connect
 unless client.discovered

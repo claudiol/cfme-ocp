@@ -15,6 +15,10 @@ object:
   - checkprovisioned:
       value: "/POC/Containers/Methods/CheckProjectExists"
   - post1:
-      value: "/POC/Containers/Methods/AddUserAsViewer"
+      value: "/POC/Containers/Methods/AddUserToCluster"
   - post2:
+      value: "/POC/Containers/Methods/AddUserAsViewer"
+  - post3:
       value: "/POC/Containers/Methods/AddNewProjectTag"
+  - post4:
+      value: "/POC/Containers/Methods/TagProjectRoles"

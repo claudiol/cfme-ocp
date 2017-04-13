@@ -18,13 +18,14 @@ object:
       value: "/POC/Containers/Methods/CheckProjectExists"
   - post1:
       value: "/POC/Containers/Methods/CreateProjectQuota"
-      on_error: 'update_serviceprovision_status_delete_project(status => ''Failed
-        to add user role to project'') '
+      on_error: update_serviceprovision_status_delete_project
   - post2:
-      value: "/POC/Containers/Methods/AddUserRole"
-      on_error: 'update_serviceprovision_status_delete_project(status => ''Failed
-        to update project quota'') '
+      value: "/POC/Containers/Methods/AddUserToCluster"
+      on_error: update_serviceprovision_status_delete_project
   - post3:
-      value: "/POC/Containers/Methods/AddNewProjectTag"
+      value: "/POC/Containers/Methods/AddUserAsRole"
+      on_error: "(status => 'Failed to add user role to project')"
   - post4:
-      value: "/POC/System/Request/TagProjectRoles"
+      value: "/POC/Containers/Methods/AddNewProjectTag"
+  - post5:
+      value: "/POC/Containers/Methods/TagProjectRoles"

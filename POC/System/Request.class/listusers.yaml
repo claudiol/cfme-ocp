@@ -4,11 +4,9 @@ version: 1.0
 object:
   attributes:
     display_name: 
-    name: AddUserRole
+    name: ListUsers
     inherits: 
     description: 
   fields:
-  - pretty:
-      value: 'true'
   - meth1:
-      value: add_user_role
+      value: list_users

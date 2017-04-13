@@ -32,9 +32,7 @@ def tag_project_user_role(project, roleref, role)
 end
 
 def get_project_role_bindings(project)
-  $evm.log("info","==> Looking at project #{project.name}")
   ems = project.ext_management_system
-  $evm.log("info","==> Project is in cluster #{ems.inspect}")
   client = ems.connect
   unless client.discovered
     client.discover

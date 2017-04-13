@@ -14,17 +14,16 @@ else
 end
 
 container_manager = $evm.vmdb('ext_management_system').find_by_name(cluster_name)
-project = $evm.vmdb(:container_project).find_by_name(project_name)
-$evm.log("info","=====> #{project_name} #{project.inspect}")
+project = $evm.vmdb(:container_project).where("name = ? AND deleted_on IS ?", project_name, nil)
+$evm.log("info","==> #{project_name} #{project.inspect}")
 
-
-if project.nil? 
+if project.nil? or project == []
   $evm.root['ae_result'] = 'ok'
   $evm.log("info","Project #{project_name} doesn't exist.  Proceeding.")
 else
   $evm.root['ae_result'] = 'error'
   $evm.log("info","Project #{project_name} already exists.")
-  exit MIQ_ABORT
+  exit MIQ_ERROR
 end
 
 $evm.log("info", "====== END CHECKING IF PROJECT #{project_name} EXISTS ======")

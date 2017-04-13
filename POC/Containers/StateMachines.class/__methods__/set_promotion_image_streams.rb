@@ -4,7 +4,10 @@
 require 'kubeclient'
 require 'json'
 
-def parse_image_streams(client, project_name,selected_configs)
+
+
+
+def parse_image_streams(client,project_name,selected_configs,route_name)
   image_streams = client.get_image_streams(namespace: project_name)
   
   unless selected_configs.kind_of?(Array)
@@ -27,13 +30,13 @@ def parse_image_streams(client, project_name,selected_configs)
         is_hash[:metadata].delete(:creationTimestamp)
         is_hash[:metadata].delete(:generation)
         is_hash.delete(:status)
-        $evm.log("info", "===> Cleaned up hash #{is_hash}")
         $evm.root["is-"+is_name] = is_hash
       end
 
       }
     }
 end
+
 
 $evm.log("info","=== BEGIN SET PROMOTION IMAGE STREAMS ===")
 project_id = 0
@@ -52,11 +55,16 @@ $evm.log("info","===> The project ID is #{project_id}")
 project = $evm.vmdb('container_project').find_by_id(project_id)
 project_name = project.name
 
+ems_id = project.ext_management_system.id
+routes = $evm.vmdb(:container_route).where(:name => 'docker-registry', :ems_id => ems_id)
+
+route_name = routes[0].host_name
+
 client = project.ext_management_system.connect
 unless client.discovered
   client.discover
 end
 
-parse_image_streams(client, project_name, selected_configs)
+parse_image_streams(client, project_name, selected_configs, route_name)
 
 $evm.log("info","=== END SET PROMOTION IMAGE STREAMS ===")

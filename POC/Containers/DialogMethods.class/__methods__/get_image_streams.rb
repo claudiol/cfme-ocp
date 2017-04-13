@@ -42,4 +42,4 @@ dialog_field["required"] = "true"
 
 dialog_field["values"] = hash
 
-$evm.log("info","===== END GETTING BUILD CONFIGS =====")
+$evm.log("info","===== END GETTING IMAGE STREAMS =====")

@@ -27,6 +27,8 @@ $evm.root.attributes.sort.each { |k, v|
         project = $evm.vmdb(:container_project).find_by_id(project_id)
         project_name = project.name
         client.patch_deployment_config(name, deployment_config, project_name)
+      else
+        raise e
       end
     end
   end

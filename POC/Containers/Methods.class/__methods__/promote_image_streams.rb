@@ -20,13 +20,15 @@ $evm.root.attributes.sort.each { |k, v|
     image_stream = $evm.root[k]
     
     begin
-    client.create_image_stream(image_stream)
+    	client.create_image_stream(image_stream)
     rescue KubeException => e
       if e.message.include? "already exists"
         project_id = dialog_options['dialog_option_0_source_project']
         project = $evm.vmdb(:container_project).find_by_id(project_id)
         project_name = project.name
         client.patch_image_stream(name, image_stream, project_name)
+      else
+        raise e
       end
     end
   end

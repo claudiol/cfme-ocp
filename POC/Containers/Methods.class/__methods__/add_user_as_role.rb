@@ -28,6 +28,23 @@ client = ems.connect
 client.discover
 
 $evm.log("info","--- The user role being added is: #{user_role} ---")
-client.patch_role_binding user_role, {:userNames => [user_name]}, project_name
+
+begin
+  role_binding = Kubeclient::RoleBinding.new
+  role_binding.metadata = {}
+  role_binding.metadata.namespace = project_name
+  role_binding.metadata.name = user_role
+  role_binding.roleRef = {}
+  role_binding.roleRef.name = user_role
+  role_binding.userNames = [user_name]
+  client.create_role_binding(role_binding)
+rescue KubeException => e
+  if e.message.include? "already exists"
+    $evm.log("info","Role Binding #{user_role} exists for project #{project_name}.  Updating instead." )
+    client.patch_role_binding user_role, {:userNames => [user_name]}, project_name
+  else
+    raise e
+  end
+end
 
 $evm.log("info", "====== END USER #{user_name} TO PROJECT #{project_name} ======")

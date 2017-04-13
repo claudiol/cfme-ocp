@@ -32,7 +32,8 @@ end
 
 
 target_cluster = $evm.vmdb(:ext_management_system).find_by_name(target_cluster_name)
-projects = $evm.vmdb(:container_project).where(:name => project_name, :ems_id => target_cluster.id)
+#projects = $evm.vmdb(:container_project).where(:name => project_name, :ems_id => target_cluster.id)
+projects = $evm.vmdb(:container_project).where("name = ? AND ems_id = ? AND deleted_on IS ?", project_name, target_cluster.id, nil)
 
 projects.each { |project|
   $evm.log("info","==> Tagging Project #{project.name}")

@@ -2,4 +2,5 @@
 # Description: <Method description here>
 #
 $evm.log("error","Failure promoting object.")
-exit MIQ_ABORT
+$evm.root['ae_result'] = 'error'
+exit MIQ_ERROR

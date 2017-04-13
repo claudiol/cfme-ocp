@@ -43,7 +43,14 @@ resource_quota.spec.hard.replicationcontrollers = group.tags("quota_ocp_rc")[0]
 resource_quota.spec.hard.services = group.tags("quota_ocp_services")[0]
 resource_quota.spec.hard.persistentvolumeclaims = group.tags("quota_ocp_pvc")[0]
 resource_quota.spec.hard.secrets = group.tags("quota_ocp_secrets")[0]
-resp = client.create_resource_quota resource_quota
+
+begin
+	resp = client.create_resource_quota resource_quota
+rescue KubeException => e
+    if e.message.include? "already exists"
+      client.patch_resource_quota("ocpquota", resource_quota, project_name)
+    end
+end
 
 $evm.log("info","Response => #{resp}")
 

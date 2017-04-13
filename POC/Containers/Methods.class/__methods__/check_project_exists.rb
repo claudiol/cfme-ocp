@@ -13,9 +13,9 @@ end
 
 $evm.log("info", "========= BEGIN CHECKING IF PROJECT #{project_name} EXISTS =========")
 target_cluster = $evm.vmdb(:ext_management_system).find_by_name(target_cluster_name)
-project = $evm.vmdb(:container_project).where(:name => project_name, :ems_id => target_cluster.id)
+project = $evm.vmdb(:container_project).where("name = ? AND ems_id = ? AND deleted_on IS ?", project_name, target_cluster.id, nil)
 
-unless project.nil?
+if project != []
   $evm.root['ae_result'] = 'ok'
   $evm.log("info","Project #{project_name} has been created.")
 else

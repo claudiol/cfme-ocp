@@ -4,9 +4,9 @@ version: 1.0
 object:
   attributes:
     display_name: 
-    name: BuildConfigs
+    name: AddUserToProject
     inherits: 
     description: 
   fields:
   - meth1:
-      value: get_build_configs
+      value: add_user_to_project
