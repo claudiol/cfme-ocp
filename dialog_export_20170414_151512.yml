@@ -1,0 +1,529 @@
+---
+- description: Project Promotion Request Dialog
+  buttons: submit,cancel
+  label: project-promotion-request-dialog
+  blueprint_id: 
+  dialog_tabs:
+  - description: 
+    display: edit
+    label: Basic Info
+    display_method: 
+    display_method_options: 
+    position: 0
+    dialog_groups:
+    - description: 
+      display: edit
+      label: General
+      display_method: 
+      display_method_options: 
+      position: 0
+      dialog_fields:
+      - name: option_0_source_project
+        description: 
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: true
+        required_method: 
+        required_method_options: {}
+        default_value: '10000000000014'
+        values:
+        - - 10000000000014
+          - Cluster A - jboss
+        - - 10000000000037
+          - Cluster A - cfmetest
+        values_method: 
+        values_method_options: {}
+        options:
+          :force_multi_value: false
+          :sort_by: :value
+          :sort_order: :ascending
+        label: Source Project
+        position: 0
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: true
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: false
+        auto_refresh: 
+        trigger_auto_refresh: true
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Containers
+          ae_class: DialogMethods
+          ae_instance: GetPromotableProjects
+          ae_message: 
+          ae_attributes: {}
+      - name: option_0_target_cluster
+        description: 
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values:
+        - - 
+          - "<Script error>"
+        values_method: 
+        values_method_options: {}
+        options:
+          :force_multi_value: false
+        label: Target Cluster
+        position: 1
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: true
+        show_refresh_button: false
+        load_values_on_init: 
+        read_only: false
+        auto_refresh: true
+        trigger_auto_refresh: false
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Containers
+          ae_class: DialogMethods
+          ae_instance: GetPromotionClusters
+          ae_message: 
+          ae_attributes: {}
+    - description: Project components you wish to promote
+      display: edit
+      label: Components
+      display_method: 
+      display_method_options: 
+      position: 1
+      dialog_fields:
+      - name: option_0_services
+        description: 
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values:
+        - - 
+          - "<Script error>"
+        values_method: 
+        values_method_options: {}
+        options:
+          :force_multi_value: true
+        label: Services
+        position: 0
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: true
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: false
+        auto_refresh: true
+        trigger_auto_refresh: 
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Containers
+          ae_class: DialogMethods
+          ae_instance: GetServices
+          ae_message: 
+          ae_attributes: {}
+      - name: option_0_deployment_configs
+        description: 
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values:
+        - - 
+          - "<Script error>"
+        values_method: 
+        values_method_options: {}
+        options:
+          :force_multi_value: true
+        label: Deployment Configurations
+        position: 1
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: true
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: false
+        auto_refresh: true
+        trigger_auto_refresh: 
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Containers
+          ae_class: DialogMethods
+          ae_instance: GetDeploymentConfigs
+          ae_message: 
+          ae_attributes: {}
+      - name: option_0_pvcs
+        description: Container Volumes
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values:
+        - - 
+          - "<Script error>"
+        values_method: 
+        values_method_options: {}
+        options:
+          :force_multi_value: true
+        label: Container Volumes
+        position: 2
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: true
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: false
+        auto_refresh: true
+        trigger_auto_refresh: 
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Containers
+          ae_class: DialogMethods
+          ae_instance: GetPvcs
+          ae_message: 
+          ae_attributes: {}
+    - description: Routes
+      display: edit
+      label: Routes
+      display_method: 
+      display_method_options: 
+      position: 2
+      dialog_fields:
+      - name: option_0_route_name
+        description: Route Name
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: 
+        values:
+        - - 
+          - "<Script error>"
+        values_method: 
+        values_method_options: {}
+        options:
+          :force_multi_value: false
+        label: Route Name
+        position: 0
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: true
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: false
+        auto_refresh: true
+        trigger_auto_refresh: true
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Containers
+          ae_class: DialogMethods
+          ae_instance: GetRoutes
+          ae_message: 
+          ae_attributes: {}
+      - name: option_0_route_current_hostname
+        description: Current Hostname
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values: "<Script error>"
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Current Hostname
+        position: 1
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: true
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: false
+        auto_refresh: true
+        trigger_auto_refresh: 
+        visible: true
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Containers
+          ae_class: DialogMethods
+          ae_instance: GetCurrentRouteHostname
+          ae_message: 
+          ae_attributes: {}
+      - name: option_0_route_destination_hostname
+        description: Destination Hostname
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Destination Hostname
+        position: 2
+        validator_type: 
+        validator_rule: 
+        reconfigurable: true
+        dynamic: false
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: false
+        auto_refresh: 
+        trigger_auto_refresh: 
+        visible: true
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+- description: Project Request Dialog
+  buttons: submit,cancel
+  label: project-request-dialog
+  blueprint_id: 
+  dialog_tabs:
+  - description: Basic Info
+    display: edit
+    label: Basic Info
+    display_method: 
+    display_method_options: 
+    position: 0
+    dialog_groups:
+    - description: General
+      display: edit
+      label: General
+      display_method: 
+      display_method_options: 
+      position: 0
+      dialog_fields:
+      - name: option_0_service_name
+        description: Project name may only container lowercase letters and numbers
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: true
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Project Name
+        position: 0
+        validator_type: regex
+        validator_rule: "^([a-z0-9]+-)*[a-z0-9]+$"
+        reconfigurable: 
+        dynamic: false
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: false
+        auto_refresh: 
+        trigger_auto_refresh: 
+        visible: true
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+      - name: option_0_display_name
+        description: Project Display Name
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Project Display Name
+        position: 1
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: false
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: false
+        auto_refresh: 
+        trigger_auto_refresh: 
+        visible: true
+        type: DialogFieldTextBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+      - name: option_0_project_description
+        description: Project Description
+        data_type: 
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: false
+        required_method: 
+        required_method_options: {}
+        default_value: ''
+        values: 
+        values_method: 
+        values_method_options: {}
+        options:
+          :protected: false
+        label: Project Description
+        position: 2
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: false
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: false
+        auto_refresh: 
+        trigger_auto_refresh: 
+        visible: true
+        type: DialogFieldTextAreaBox
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: 
+          ae_class: 
+          ae_instance: 
+          ae_message: 
+          ae_attributes: {}
+      - name: option_0_target_cluster
+        description: 
+        data_type: string
+        notes: 
+        notes_display: 
+        display: edit
+        display_method: 
+        display_method_options: {}
+        required: true
+        required_method: 
+        required_method_options: {}
+        default_value: Cluster A
+        values:
+        - - Cluster A
+          - Cluster A
+        values_method: 
+        values_method_options: {}
+        options:
+          :force_multi_value: false
+          :sort_by: :value
+          :sort_order: :ascending
+        label: Target Cluster
+        position: 3
+        validator_type: 
+        validator_rule: 
+        reconfigurable: 
+        dynamic: true
+        show_refresh_button: 
+        load_values_on_init: 
+        read_only: false
+        auto_refresh: 
+        trigger_auto_refresh: 
+        visible: true
+        type: DialogFieldDropDownList
+        resource_action:
+          action: 
+          resource_type: DialogField
+          ae_namespace: Containers
+          ae_class: DialogMethods
+          ae_instance: GetDeploymentClusters
+          ae_message: 
+          ae_attributes: {}

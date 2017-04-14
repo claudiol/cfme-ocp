@@ -1,0 +1,1675 @@
+---
+- description: Location
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: The geographic location of the resource, such as New York, Chicago,
+    or London.
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: location
+  entries:
+  - description: New York
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: ny
+  - description: Chicago
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: chicago
+  - description: London
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: london
+  - description: Paris
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: paris
+- description: Workload
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: false
+  example_text: The workloads a resource provides, such as Web Server, Database, or
+    Firewall.
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: function
+  entries:
+  - description: Desktop
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: desktop
+  - description: Active Directory Server
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: active_directory
+  - description: Application Servers
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: application_servers
+  - description: Database
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: database
+  - description: DHCP Server
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: dhcp
+  - description: EVM Appliance
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: evm_appliance
+  - description: Virtual Infrastructure Management
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: infrastructure
+  - description: Messaging
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: messaging
+  - description: Security
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: security
+- description: Owner
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: The individual or group that owns the resource.
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: owner
+  entries:
+  - description: Production Linux Team
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: prod_linux
+  - description: Production Operations Team
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: prod_ops
+  - description: Windows 2008 Test Team
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: win2008_test
+- description: Environment
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: The resource environment, such as Development, QA, Test, or Production
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: environment
+  entries:
+  - description: Development
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: dev
+  - description: Production
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: prod
+  - description: Quarantine
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: quar
+  - description: Test
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: test
+  - description: Quality Assurance
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: qa
+- description: Service Level
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: The level of service associated with this resource.
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: service_level
+  entries:
+  - description: Silver
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: silver
+  - description: Gold
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: gold
+  - description: Platinum
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: platinum
+- description: Customer
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: The name of the customer associated with this resource.
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: customer
+  entries: []
+- description: Line of Business
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: false
+  example_text: The Line of Business the resource is assigned to, such as Retail,
+    Trading, or Manufacturing.
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: lob
+  entries: []
+- description: Department
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: false
+  example_text: The department the resource is assigned to, such as HR, Accounting,
+    or Sales.
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: department
+  entries:
+  - description: Accounting
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: accounting
+  - description: Automotive
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: automotive
+  - description: Communication
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: communication
+  - description: Defense Systems
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: defense
+  - description: Engineering
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: engineering
+  - description: Financial Services
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: finance
+  - description: Human Resources
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: hr
+  - description: Presales
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: presales
+  - description: Retail Operations
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: retail
+  - description: Support
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: support
+  - description: Trading Floor
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: trading
+  - description: Healthcare
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: healthcare
+  - description: Marketing
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: marketing
+  - description: Purchasing
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: purchasing
+  - description: VI Operations
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: vi_operations
+  - description: Retail Operations Test
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: retail_test
+- description: Cost Center
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: Cost Center
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: cc
+  entries:
+  - description: Cost Center 001
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '001'
+  - description: Cost Center 002
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '002'
+- description: Network Location
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: The network location the resource is to be used, such as DMZ, Internal
+    network or Cloud
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: network_location
+  entries:
+  - description: DMZ
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: dmz
+  - description: Internal
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: internal
+  - description: Cloud
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: cloud
+- description: Exclusions
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: false
+  example_text: Operations that the resource may be excluded from, such as Analysis
+    or Cloning.
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: exclusions
+  entries:
+  - description: Do not Analyze
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: do_not_analyze
+  - description: Do not Clone
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: do_not_clone
+- description: Provisioning Scope
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: false
+  example_text: Provisioning Scope
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: prov_scope
+  entries:
+  - description: All
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: all
+  - description: EvmGroup-user_self_service
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: evmgroup_user_self_service
+- description: EVM Operations
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: Operations
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: operations
+  entries:
+  - description: Analysis Failed
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: analysis_failed
+  - description: Analysis Required
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: analysis_required
+  - description: Analysis Successful
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: analysis_success
+- description: Quota - Max CPUs
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: Maximum number of CPUs allowed by Quota
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: quota_max_cpu
+  entries:
+  - description: '1'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '1'
+  - description: '2'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '2'
+  - description: '3'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '3'
+  - description: '4'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '4'
+  - description: '5'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '5'
+  - description: '10'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '10'
+  - description: '20'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '20'
+  - description: '30'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '30'
+  - description: '40'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '40'
+  - description: '50'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '50'
+- description: Auto Approve - Max CPU
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: Maximum number of CPUs allowed by Auto Approval
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: prov_max_cpu
+  entries:
+  - description: '1'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '1'
+  - description: '2'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '2'
+  - description: '3'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '3'
+  - description: '4'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '4'
+  - description: '5'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '5'
+- description: Auto Approve - Max VM
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: Maximum number of VMs allowed by Auto Approval
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: prov_max_vm
+  entries:
+  - description: '1'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '1'
+  - description: '2'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '2'
+  - description: '3'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '3'
+  - description: '4'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '4'
+  - description: '5'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '5'
+- description: Quota - Max  Memory
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: Maximum Memory allowed by Quota (GB)
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: quota_max_memory
+  entries:
+  - description: 1GB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '1024'
+  - description: 2GB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '2048'
+  - description: 4GB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '4096'
+  - description: 8GB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '8192'
+  - description: 10GB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '10240'
+  - description: 20GB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '20480'
+  - description: 40GB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '40960'
+  - description: 80GB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '81920'
+- description: Auto Approve - Max Memory
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: Maximum Memory allowed by Auto Approval (GB)
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: prov_max_memory
+  entries:
+  - description: 1GB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '1024'
+  - description: 2GB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '2048'
+  - description: 4GB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '4096'
+  - description: 8GB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '8192'
+- description: Quota - Max  Storage
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: Maximum Storage allowed by Quota (GB)
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: quota_max_storage
+  entries:
+  - description: 10GB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '10'
+  - description: 20GB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '20'
+  - description: 40GB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '40'
+  - description: 100GB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '100'
+  - description: 200GB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '200'
+  - description: 400GB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '400'
+  - description: 1TB
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '1000'
+- description: Auto Approve - Max Retirement Days
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: Maximum Days for Retirement allowed by Auto Approval
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: prov_max_retirement_days
+  entries:
+  - description: '30'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '30'
+  - description: '60'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '60'
+  - description: '90'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '90'
+  - description: '180'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: '180'
+- description: LifeCycle
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: LifeCycle Options
+  parent_id: 0
+  show: true
+  default: true
+  perf_by_tag: 
+  name: lifecycle
+  entries:
+  - description: Fully retire VM and remove from Provider
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: true
+    perf_by_tag: 
+    name: retire_full
+- description: "Quota OCP Pods\t"
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: "Quota OCP Pods\t"
+  parent_id: 0
+  show: true
+  default: 
+  perf_by_tag: false
+  name: quota_ocp_pods
+  entries:
+  - description: '100'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '100'
+  - description: '25'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '25'
+  - description: '50'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '50'
+- description: Quota OCP Persistent Volume Claims
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: Quota OCP Persistent Volume Claims
+  parent_id: 0
+  show: true
+  default: 
+  perf_by_tag: false
+  name: quota_ocp_pvc
+  entries:
+  - description: '1'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '1'
+  - description: '10'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '10'
+  - description: '5'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '5'
+- description: Quota OCP Replication Controller Count
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: Quota OCP Replication Controller Count
+  parent_id: 0
+  show: true
+  default: 
+  perf_by_tag: false
+  name: quota_ocp_rc
+  entries:
+  - description: '10'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '10'
+  - description: '20'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '20'
+  - description: '50'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '50'
+- description: Quota OCP Secrets
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: Quota OCP Secrets
+  parent_id: 0
+  show: true
+  default: 
+  perf_by_tag: false
+  name: quota_ocp_secrets
+  entries:
+  - description: '10'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '10'
+  - description: '20'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '20'
+  - description: '5'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '5'
+- description: Quota OCP Services
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: Quota OCP Services
+  parent_id: 0
+  show: true
+  default: 
+  perf_by_tag: false
+  name: quota_ocp_services
+  entries:
+  - description: '100'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '100'
+  - description: '25'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '25'
+  - description: '50'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '50'
+- description: LDAP Manager Attribute
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: LDAP Manager Attribute
+  parent_id: 0
+  show: true
+  default: 
+  perf_by_tag: false
+  name: ldap_manager_attribute
+  entries:
+  - description: Manager
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: manager
+- description: LDAP User Name Attribute
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: LDAP User Name Attribute
+  parent_id: 0
+  show: true
+  default: 
+  perf_by_tag: false
+  name: ldap_username_attribute
+  entries:
+  - description: UID
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: uid
+- description: Default Requester Project Role
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: Default Requester Project Role
+  parent_id: 0
+  show: true
+  default: 
+  perf_by_tag: false
+  name: ocp_project_role
+  entries:
+  - description: Administrator
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: admin
+  - description: Editor
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: edit
+  - description: Viewer
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: view
+- description: Project Provision Mechanism
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: 
+  parent_id: 0
+  show: true
+  default: 
+  perf_by_tag: false
+  name: project_provision_mechanism
+  entries:
+  - description: CFME
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: cfme
+- description: CFME Managed
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: CFME Managed
+  parent_id: 0
+  show: true
+  default: 
+  perf_by_tag: false
+  name: cfme_managed
+  entries:
+  - description: 'True'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: 'true'
+  - description: 'False'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: 'false'
+- description: OCP Role admin
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: 
+  parent_id: 0
+  show: true
+  default: 
+  perf_by_tag: false
+  name: ocp_role_admin
+  entries:
+  - description: kevensen
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: kevensen
+  - description: system:admin
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: system:admin
+- description: OCP Cluster Promotion Step
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: false
+  example_text: OCP Cluster Promotion Step
+  parent_id: 0
+  show: true
+  default: 
+  perf_by_tag: false
+  name: ocp_cluster_step
+  entries:
+  - description: '1'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '1'
+  - description: '2'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '2'
+  - description: '3'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '3'
+  - description: '4'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '4'
+- description: OCP Role view
+  icon: 
+  read_only: false
+  syntax: string
+  single_value: true
+  example_text: 
+  parent_id: 0
+  show: true
+  default: 
+  perf_by_tag: false
+  name: ocp_role_view
+  entries:
+  - description: kevensen
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: true
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: kevensen
