@@ -1427,50 +1427,6 @@
     default: 
     perf_by_tag: 
     name: '50'
-- description: LDAP Manager Attribute
-  icon: 
-  read_only: false
-  syntax: string
-  single_value: true
-  example_text: LDAP Manager Attribute
-  parent_id: 0
-  show: true
-  default: 
-  perf_by_tag: false
-  name: ldap_manager_attribute
-  entries:
-  - description: Manager
-    icon: 
-    read_only: false
-    syntax: string
-    single_value: false
-    example_text: 
-    show: true
-    default: 
-    perf_by_tag: 
-    name: manager
-- description: LDAP User Name Attribute
-  icon: 
-  read_only: false
-  syntax: string
-  single_value: true
-  example_text: LDAP User Name Attribute
-  parent_id: 0
-  show: true
-  default: 
-  perf_by_tag: false
-  name: ldap_username_attribute
-  entries:
-  - description: UID
-    icon: 
-    read_only: false
-    syntax: string
-    single_value: false
-    example_text: 
-    show: true
-    default: 
-    perf_by_tag: 
-    name: uid
 - description: Default Requester Project Role
   icon: 
   read_only: false
@@ -1483,7 +1439,7 @@
   perf_by_tag: false
   name: ocp_project_role
   entries:
-  - description: Administrator
+  - description: Admin
     icon: 
     read_only: false
     syntax: string
@@ -1513,28 +1469,38 @@
     default: 
     perf_by_tag: 
     name: view
-- description: Project Provision Mechanism
+- description: OCP Cluster Promotion Step
   icon: 
   read_only: false
   syntax: string
-  single_value: true
-  example_text: 
+  single_value: false
+  example_text: OCP Cluster Promotion Step
   parent_id: 0
   show: true
   default: 
   perf_by_tag: false
-  name: project_provision_mechanism
+  name: ocp_cluster_step
   entries:
-  - description: CFME
+  - description: '1'
     icon: 
     read_only: false
     syntax: string
-    single_value: true
+    single_value: false
     example_text: 
     show: true
     default: 
     perf_by_tag: 
-    name: cfme
+    name: '1'
+  - description: '2'
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: '2'
 - description: CFME Managed
   icon: 
   read_only: false
@@ -1589,87 +1555,45 @@
     default: 
     perf_by_tag: 
     name: kevensen
-  - description: system:admin
-    icon: 
-    read_only: false
-    syntax: string
-    single_value: true
-    example_text: 
-    show: true
-    default: 
-    perf_by_tag: 
-    name: system:admin
-- description: OCP Cluster Promotion Step
-  icon: 
-  read_only: false
-  syntax: string
-  single_value: false
-  example_text: OCP Cluster Promotion Step
-  parent_id: 0
-  show: true
-  default: 
-  perf_by_tag: false
-  name: ocp_cluster_step
-  entries:
-  - description: '1'
-    icon: 
-    read_only: false
-    syntax: string
-    single_value: false
-    example_text: 
-    show: true
-    default: 
-    perf_by_tag: 
-    name: '1'
-  - description: '2'
-    icon: 
-    read_only: false
-    syntax: string
-    single_value: false
-    example_text: 
-    show: true
-    default: 
-    perf_by_tag: 
-    name: '2'
-  - description: '3'
-    icon: 
-    read_only: false
-    syntax: string
-    single_value: false
-    example_text: 
-    show: true
-    default: 
-    perf_by_tag: 
-    name: '3'
-  - description: '4'
-    icon: 
-    read_only: false
-    syntax: string
-    single_value: false
-    example_text: 
-    show: true
-    default: 
-    perf_by_tag: 
-    name: '4'
-- description: OCP Role view
+- description: Default Promotion Project Role
   icon: 
   read_only: false
   syntax: string
   single_value: true
-  example_text: 
+  example_text: Default Promotion Project Role
   parent_id: 0
   show: true
   default: 
   perf_by_tag: false
-  name: ocp_role_view
+  name: ocp_promotion_role
   entries:
-  - description: kevensen
+  - description: Admin
     icon: 
     read_only: false
     syntax: string
-    single_value: true
+    single_value: false
     example_text: 
     show: true
     default: 
     perf_by_tag: 
-    name: kevensen
+    name: admin
+  - description: Edit
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: edit
+  - description: View
+    icon: 
+    read_only: false
+    syntax: string
+    single_value: false
+    example_text: 
+    show: true
+    default: 
+    perf_by_tag: 
+    name: view

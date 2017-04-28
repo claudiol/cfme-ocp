@@ -3,8 +3,6 @@ As of CloudForms 4.0, not only can one monitor and manage cloud workloads, but c
 
 CloudForms 4.1 brought many improvements for both IaaS and PaaS.  This automate model allows a user to provision an OCP project via a CloudForms Service Catalog Item (more features to come).  This is useful if the OCP administrators wish to disable the self-service provisioner capability in OCP, and add an approval workflow to provisioning a project
 
-This relies on the [Kubeclient Ruby Gem](https://github.com/abonas/kubeclient).
-
 If you wish to checkout the upstream project for CloudForms, take a look at [ManageIQ](http://manageiq.org/).
 
 Documentation is located in the [docs folder](https://github.com/kevensen/cfme-ocp/tree/master/docs).

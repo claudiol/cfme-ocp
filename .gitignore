@@ -1,3 +1,4 @@
 examples/
 *.zip
 .DS_Store
+!datastore.zip
